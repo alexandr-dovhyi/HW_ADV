@@ -73,21 +73,6 @@ class Cow(Animals):
         print(f'Unique I give {self.milk} .')
 
 
-bird = Bird('Chirik', 'worms', 3, 'fly')
-wolf = Wolf('Grey', 'meat', 5, 'YOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOWL')
-bee = Bee('Small Bee', 'flowers', 4, 'take honey')
-eleph = Elephant('Jack', 'grass', 8, 'long nose')
-cow = Cow('Milka', 'grass', 6, 'milk')
-
-a = (bird, wolf, bee, eleph, cow)
-
-for i in a:
-    i.eating()
-    i.sleeping()
-    i.unique()
-
-for i in a:
-    print(isinstance(i, Animals))
 """
 1.
 a.Create a new class Human and use multiple inheritance to create Centaur class, createan instance of Centaur class and
@@ -131,14 +116,6 @@ class Centaur(Animals, Human):
         print(f'{self.name} catching butterfly')
 
 
-cent = Centaur('Gosha', 'Feed', 15)
-
-
-cent.eating()
-cent.sleeping()
-cent.working()
-cent.studying()
-
 # OUTPUT:
 
 # I am Gosha, and I eating Feed
@@ -147,23 +124,23 @@ cent.studying()
 # Gosha studying
 
 # 2
-class Centaur(Human, Animals):
-    """
-    Centaur class should be inherited from Human and Animal and has unique method related to it.
-    """
-
-    def __init__(self, name, eat, sleep):
-        super().__init__(name, eat, sleep)
-
-    def rest(self):
-        print(f'{self.name} catching butterfly')
-
-
-cent = Centaur('Gosha', 'Feed', 15)
-cent.eating()
-cent.sleeping()
-cent.working()
-cent.studying()
+# class Centaur(Human, Animals):
+#     """
+#     Centaur class should be inherited from Human and Animal and has unique method related to it.
+#     """
+#
+#     def __init__(self, name, eat, sleep):
+#         super().__init__(name, eat, sleep)
+#
+#     def rest(self):
+#         print(f'{self.name} catching butterfly')
+#
+#
+# cent = Centaur('Gosha', 'Feed', 15)
+# cent.eating()
+# cent.sleeping()
+# cent.working()
+# cent.studying()
 
 # OUTPUT:
 
@@ -199,13 +176,6 @@ class Arm:
         self.hand = hand
 
 
-hand_ = Person()
-
-
-for hand_1_2 in hand_.arms:
-    print(hand_1_2.hand)
-
-
 # b.
 
 class CellPhone:
@@ -224,14 +194,6 @@ class Screen:
 
     def __init__(self, screen_type):
         self.screen_type = screen_type
-
-
-phone = Screen('IPS')
-my_phone = CellPhone(phone)
-
-
-print(phone.screen_type)
-print(my_phone.screen.screen_type)
 
 
 # 3.
@@ -255,9 +217,6 @@ class Profile:
     def __str__(self):
         return f'About person: {self.about}'
 
-
-profile = Profile('Alex', 'B', 8965121321, "Evropeis'ka street", '123@i.ua', '01.01.2000', 21, 'male')
-print(profile)
 
 """
 4.* Create an interface for the Laptop with the next methods: Screen, Keyboard, Touchpad, WebCam, Ports, Dynamics 
@@ -310,9 +269,47 @@ class HPLaptop(Laptop):
     def Dynamics(self):
         return 'HPLaptop dynamics'
 
+if __name__ == "__main__":
 
-c = HPLaptop()
-b = [c.Screen(), c.Ports(), c.WebCam(), c.Dynamics(), c.Keyboard(), c.WebCam()]
+    bird = Bird('Chirik', 'worms', 3, 'fly')
+    wolf = Wolf('Grey', 'meat', 5, 'YOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOWL')
+    bee = Bee('Small Bee', 'flowers', 4, 'take honey')
+    eleph = Elephant('Jack', 'grass', 8, 'long nose')
+    cow = Cow('Milka', 'grass', 6, 'milk')
 
-for i in b:
-    print(i)
+    a = (bird, wolf, bee, eleph, cow)
+
+    for i in a:
+        i.eating()
+        i.sleeping()
+        i.unique()
+
+    for i in a:
+        print(isinstance(i, Animals))
+
+    cent = Centaur('Gosha', 'Feed', 15)
+
+    cent.eating()
+    cent.sleeping()
+    cent.working()
+    cent.studying()
+
+    hand_ = Person()
+
+    for hand_1_2 in hand_.arms:
+        print(hand_1_2.hand)
+
+    phone = Screen('IPS')
+    my_phone = CellPhone(phone)
+
+    print(phone.screen_type)
+    print(my_phone.screen.screen_type)
+
+    profile = Profile('Alex', 'B', 8965121321, "Evropeis'ka street", '123@i.ua', '01.01.2000', 21, 'male')
+    print(profile)
+
+    c = HPLaptop()
+    b = [c.Screen(), c.Ports(), c.WebCam(), c.Dynamics(), c.Keyboard(), c.WebCam()]
+
+    for i in b:
+        print(i)
